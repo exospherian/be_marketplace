@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
-import { User } from './entity';
+import { User, Profile } from './entities';
 import { UsersModule } from './users/users.module';
 
 @Module({
@@ -15,7 +15,7 @@ import { UsersModule } from './users/users.module';
 		username: 'postgres',
 		password: 'postgres',
 		database: 'main',
-		entities: [User],
+		entities: [User, Profile],
 		synchronize: true,    //this option should be eliminated later!
 	  }),
 	UsersModule,
